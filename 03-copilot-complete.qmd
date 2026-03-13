@@ -1,0 +1,74 @@
+---
+title: "02-copilot"
+format: html
+---
+
+Github Copilot was the first "Copilot", and that name was later absorbed by Microsoft. It is an AI model trained on all the data on Github, and it does come [with some controversy](https://en.wikipedia.org/wiki/GitHub_Copilot#Licensing_controversy).
+
+Github Copilot of free for students who are authenticated through their program. That program evolves along with everything else in AI. On the day I write this in March 2026, Github is changing the structure, but the result is the same. 
+
+[Read more here](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html) about how to connect to you Github account.
+
+Within RStudio, Copilot acts as a code completion tool. One effective way to use it is to descibe what you want to do within your notebook and then activate it.
+
+## Scrape cfbstats web page
+
+My goal here is to scrape the most recent page of Scoring Offence [from this page](https://cfbstats.com/2025/leader/national/team/offense/split01/category09/sort01.html) on cfbstats.
+
+The questions I might ask Copilot
+
+- What packages do I need to do this
+- Scrape the table that has the scoring offense.
+- Create a function where I can choose which year to scrape.
+
+## The process I used
+
+What packages do I need to start with?
+
+```{r}
+#| label: copilot-scrape
+# what packages do I need?
+
+library(rvest)
+library(tidyverse)
+```
+
+Scrape the pages.
+
+```{r}
+#| label: copilot-scrape2
+
+url <- "https://cfbstats.com/2025/leader/national/team/offense/split01/category09/sort01.html"
+
+page <- read_html(url)
+
+# pull the table of stats
+stats_table <- page |> html_element("table") |> html_table()
+
+# and then view it
+stats_table
+```
+
+I will need to get different years. Write a function that allows me to enter a year into the function to grab those stats.
+
+```{r}
+#| label: copilot-scrape3
+
+get_stats <- function(year) {
+  url <- glue::glue("https://cfbstats.com/{year}/leader/national/team/offense/split01/category09/sort01.html")
+  
+  page <- read_html(url)
+  
+  stats_table <- page |> html_element("table") |> html_table()
+  
+  return(stats_table)
+}
+
+get_stats("2024")
+```
+
+
+
+
+
+

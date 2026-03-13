@@ -1,0 +1,8 @@
+---
+title: "ai-for-rstudio"
+---
+
+This project explores and demonstrates different uses of AI with R and RStudio.
+
+I'm admittedly not an export on AI or its uses with R or coding in general. I'm learning along with you.
+

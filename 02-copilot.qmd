@@ -1,0 +1,23 @@
+---
+title: "02-copilot"
+format: html
+---
+
+Github Copilot was the first "Copilot", and that name was later absorbed by Microsoft. It is an AI model trained on all the data on Github, and it does come [with some controversy](https://en.wikipedia.org/wiki/GitHub_Copilot#Licensing_controversy).
+
+Github Copilot of free for students who are authenticated through their program. That program evolves along with everything else in AI. On the day I write this in March 2026, Github is changing the structure, but the result is the same. 
+
+[Read more here](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html) about how to connect to you Github account.
+
+Within RStudio, Copilot acts as a code completion tool. One effective way to use it is to descibe what you want to do within your notebook and then activate it.
+
+## Scrape cfbstats web page
+
+My goal here is to scrape the most recent page of Scoring Offence [from this page](https://cfbstats.com/2025/leader/national/team/offense/split01/category09/sort01.html) on cfbstats.
+
+The questions I might ask Copilot
+
+- What packages do I need to do this
+- Scrape the table that has the scoring offense.
+- Create a function where I can choose which year to scrape.
+
