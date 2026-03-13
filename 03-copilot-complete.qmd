@@ -1,5 +1,5 @@
 ---
-title: "02-copilot"
+title: "02-copilot-complete"
 format: html
 ---
 
@@ -65,6 +65,7 @@ get_stats <- function(year) {
 }
 
 get_stats("2024")
+get_stats("2023")
 ```
 
 
